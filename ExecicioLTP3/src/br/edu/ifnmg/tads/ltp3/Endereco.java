@@ -63,8 +63,8 @@ public class Endereco {
 
     public void setCep(String cep) {
         Pattern padraoCep = Pattern.compile("\\d{5}-\\d{3}");
-        Matcher x= padraoCep.matcher(cep);
-        if(x.matches()){
+        Matcher comparar= padraoCep.matcher(cep);
+        if(comparar.matches()){
             this.cep=cep;
         }
         
