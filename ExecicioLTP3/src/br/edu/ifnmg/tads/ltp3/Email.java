@@ -12,15 +12,15 @@ import java.util.regex.Pattern;
  * @author Aline
  */
 public class Email {
-    private int codigoEmail;
+    private int codigo;
     private String email;
 
-    public int getCodigoEmail() {
-        return codigoEmail;
+    public int getCodigo() {
+        return codigo;
     }
 
-    public void setCodigoEmail(int codigoEmail) {
-        this.codigoEmail = codigoEmail;
+    public void setCodigoEm(int codigoEmail) {
+        this.codigo = codigoEmail;
     }
 
     public String getEmail() {
@@ -34,7 +34,7 @@ public class Email {
         Matcher comparar ;
         comparar = patternEmail.matcher(email);
         if(comparar.matches()){
-         this.email = email;   
+          this.email = email;   
         }
         
     }
