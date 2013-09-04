@@ -4,6 +4,7 @@
  */
 package br.edu.ifnmg.tads.ltp3;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -13,24 +14,24 @@ import java.util.List;
  * @author Aline
  */
 public class Venda {
-    private int codigoVenda;
-    private int data;
+    private int codigo;
+    private Date data;
     private double valorTotal;
     private List<ItemVenda> itemVenda;
 
     public int getCodigoVenda() {
-        return codigoVenda;
+        return codigo;
     }
 
     public void setCodigoVenda(int codigoVenda) {
-        this.codigoVenda = codigoVenda;
+        this.codigo = codigoVenda;
     }
 
-    public int getData() {
+    public Date getData() {
         return data;
     }
 
-    public void setData(int data) {
+    public void setData(Date data) {
         this.data = data;
     }
 
@@ -39,6 +40,7 @@ public class Venda {
     }
 
     public void setValorTotal(double valorTotal) {
+        
         this.valorTotal += valorTotal;
     }
 
