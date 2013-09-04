@@ -4,11 +4,9 @@
  */
 package br.edu.ifnmg.tads.ltp3;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-
-
 /**
  *
  * @author Aline
@@ -17,13 +15,19 @@ public class Venda {
     private int codigo;
     private Date data;
     private double valorTotal;
-    private List<ItemVenda> itemVenda;
-
-    public int getCodigoVenda() {
+    private List<ItemVenda> itemVendas;
+    private Pessoa pessoa;
+    
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigoVenda(int codigoVenda) {
+    public Venda() {
+        this.valorTotal =0;
+        this.itemVendas = new ArrayList<ItemVenda>();
+    }
+
+    public void setCodigo(int codigoVenda) {
         this.codigo = codigoVenda;
     }
 
@@ -32,6 +36,7 @@ public class Venda {
     }
 
     public void setData(Date data) {
+        
         this.data = data;
     }
 
@@ -44,5 +49,31 @@ public class Venda {
         this.valorTotal += valorTotal;
     }
 
+    public void addItemVenda (ItemVenda itemVenda){
+        
+        if(!this.itemVendas.contains(itemVenda)){
+            this.itemVendas.add(itemVenda);
+        }
+    }
     
-}
+     public void removeItemVenda (ItemVenda itemVenda){
+        if (this.itemVendas.contains(itemVenda)){
+            this.itemVendas.remove(itemVenda);
+        }
+    }
+
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        if(pessoa != null){
+           this.pessoa = pessoa;
+        }
+    }
+     
+     
+
+    
+    }
+
