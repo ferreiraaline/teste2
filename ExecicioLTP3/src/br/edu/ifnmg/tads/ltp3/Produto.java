@@ -15,9 +15,9 @@ public class Produto {
     private int codigo;
     private String nome;
     private double preco;
-    private String Descricao;
+    
 
-    public int getCodigo() {
+    public int getCodigo(){
         return codigo;
     }
 
@@ -30,7 +30,7 @@ public class Produto {
     }
 
     public void setNome(String nome) {
-        Pattern patternNome= Pattern.compile("[a-z A-Z\\w\\s]{3,}");
+        Pattern patternNome= Pattern.compile("[a-z A-Z\\w\\s]{3,250}");
         Matcher comparar =patternNome.matcher(nome);
         
         if(comparar.matches()){
@@ -45,16 +45,12 @@ public class Produto {
     }
 
     public void setPreco(double preco) {
-        this.preco = preco;
+        if (preco>0){
+         this.preco = preco;
+        }
     }
 
-    public String getDescricao() {
-        return Descricao;
-    }
-
-    public void setDescricao(String Descricao) {
-        this.Descricao = Descricao;
-    }
+   
     
     
 }
