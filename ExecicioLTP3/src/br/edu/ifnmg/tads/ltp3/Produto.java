@@ -4,6 +4,9 @@
  */
 package br.edu.ifnmg.tads.ltp3;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  *
  * @author Aline
@@ -27,11 +30,18 @@ public class Produto {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        Pattern patternNome= Pattern.compile("[a-z A-Z\\w\\s]{3,}");
+        Matcher comparar =patternNome.matcher(nome);
+        
+        if(comparar.matches()){
+            this.nome=nome;     
+        }
     }
 
     public double getPreco() {
-        return preco;
+                  
+           return preco;
+      
     }
 
     public void setPreco(double preco) {
