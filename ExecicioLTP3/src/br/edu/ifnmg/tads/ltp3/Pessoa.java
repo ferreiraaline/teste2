@@ -19,42 +19,53 @@ public class Pessoa {
     private String nome;
     private String cpf;
     private ArrayList<Endereco> endereco;
-    private ArrayList<Email> email;
-    private ArrayList<Venda> venda;
+    private ArrayList<Email> emails;
+
 
     public Pessoa() {
-        this.email = new ArrayList<Email>();
-    }
-    
-    
-    /**
-     *
-     * @return
-     */
-    public List<Email> getEmail(){
-        return email;
+        this.emails = new ArrayList<Email>();
         
     }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        if(codigo>0){
+          this.codigo = codigo;
+        }
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        Pattern patternNome= Pattern.compile("[\\w\\s]{3,250}");
+        Matcher comparar= patternNome.matcher(nome);
+        if(comparar.matches()){
+         this.nome = nome;   
+        }
+        
+    }
+    
   
-    public void add (Email email){
+    public void addEmail (Email email){
         
-        if(!this.email.contains(email)){
-            this.email.add(email);
+        if(!this.emails.contains(email)){
+            this.emails.add(email);
         }
     }
 
     public void removeEmail (Email email){
-        if (this.email.contains(email)){
-            this.email.remove(email);
+        if (this.emails.contains(email)){
+            this.emails.remove(email);
         }
     }
     
-     public List<Endereco> getEndereco(){
-        return endereco;
-        
-    }
     
-    public void add (Endereco endereco){
+    public void addEndereco (Endereco endereco){
         
         if(!this.endereco.contains(endereco)){
             this.endereco.add(endereco);
@@ -66,6 +77,7 @@ public class Pessoa {
             this.endereco.remove(endereco);
         }
     }
+   
     
    
     public String getCpf(){
@@ -80,4 +92,5 @@ public class Pessoa {
         }
                
     }
+    
 }
