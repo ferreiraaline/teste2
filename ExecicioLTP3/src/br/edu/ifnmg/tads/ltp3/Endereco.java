@@ -4,6 +4,9 @@
  */
 package br.edu.ifnmg.tads.ltp3;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 /**
  *
@@ -14,7 +17,8 @@ public class Endereco {
     private String bairro;
     private String cidade;
     private int numero;
-    private int cep;
+    private String cep;
+    
     public String getRua() {
         return rua;
     }
@@ -28,6 +32,7 @@ public class Endereco {
     }
 
     public void setBairro(String bairro) {
+        
         this.bairro = bairro;
     }
 
@@ -36,24 +41,34 @@ public class Endereco {
     }
 
     public void setCidade(String cidade) {
+        
         this.cidade = cidade;
     }
 
     public int getNumero() {
+        
         return numero;
     }
 
     public void setNumero(int numero) {
-        this.numero = numero;
+        
+        if(numero>0){
+          this.numero = numero;
+        }
     }
 
-    public int getCep() {
-        
+    public String getCep() {  
         return cep;
     }
 
-    public void setCep(int cep) {
-        this.cep = cep;
+    public void setCep(String cep) {
+        Pattern padraoCep = Pattern.compile("\\d{5}-\\d{3}");
+        Matcher x= padraoCep.matcher(cep);
+        if(x.matches()){
+            this.cep=cep;
+        }
+        
+     
     }
 
     
