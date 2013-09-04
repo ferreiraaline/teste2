@@ -18,7 +18,9 @@ public class ItemVenda {
     }
 
     public void setProduto(Produto produto) {
-        this.produto = produto;
+        if(produto != null){
+          this.produto = produto;
+        }
     }
 
     public int getQuantidade() {
@@ -32,4 +34,5 @@ public class ItemVenda {
     
   }
 
+    
 }
