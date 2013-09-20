@@ -14,6 +14,7 @@ import java.util.regex.Pattern;
 public class Email {
     private int codigo;
     private String email;
+    private String teste;
 
     public int getCodigo() {
         return codigo;

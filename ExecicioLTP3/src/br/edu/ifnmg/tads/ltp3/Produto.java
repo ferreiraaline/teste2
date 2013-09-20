@@ -22,7 +22,9 @@ public class Produto {
     }
 
     public void setCodigo(int codigo) {
-        this.codigo = codigo;
+        if(codigo>=0){
+          this.codigo = codigo;
+        }
     }
 
     public String getNome() {
